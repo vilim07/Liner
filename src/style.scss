@@ -1,0 +1,169 @@
+html {
+  //background-color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+$color1: #63df68;
+$color2: #1caf1f;
+
+body {
+  margin: 0;
+}
+
+.liner {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  box-sizing: border-box;
+  width: 875px;
+  margin: auto;
+  transform: translateX(-50px);
+
+  
+  span{
+    border: 5px solid transparent;
+    transform: translate(0px, 0px);
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+    width: 100px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    align-items: center;
+  }
+
+  button.bracket {
+    position: absolute;
+    left: -120px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    img{
+      width: 175px;
+      height: auto;
+    }
+    transition: transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    &:hover{
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    position: relative;
+
+    .title {
+      font-size: 30px;
+      color: #646464;
+      text-align: center;
+      margin-bottom: 15px;
+
+      span{
+        color: #009600;
+        display: block;
+
+        border: none;
+        transform: none;
+        box-sizing: content-box;
+        aspect-ratio: unset;
+        width: unset;
+        height: unset;
+        display: flex;
+        border-radius: 0;
+        transition: none;
+      }
+    }
+
+    &.big {
+      margin-top: 0;
+
+      .title {
+        margin-bottom: 0;
+      }
+
+      span {
+        width: 130px;
+
+        img {
+          max-width: 85px;
+          max-height: 85px;
+        }
+      }
+    }
+  }
+
+  .item {
+
+    position: relative;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    &:hover {
+      //background-color: $color1;
+    }
+
+    &.worn {
+      pointer-events: none;
+      cursor: grab;
+    }
+
+
+    .title {
+      position: absolute;
+      font-size: 42px;
+      line-height: 1;
+      text-align: start;
+      width: 100px;
+      right: -150px;
+      color: #1caf1f;
+    }
+
+
+
+    img {
+      max-width: 80px;
+      max-height: 80px;
+    }
+  }
+
+  .pseudoBG {
+    position: absolute;
+    background-color: $color1;
+    border: 5px solid $color2;
+
+    z-index: -1;
+    transition: none;
+  }
+
+  svg {
+    position: absolute;
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    shape-rendering: auto;
+    pointer-events: none;
+    z-index: -2;
+
+    line {
+      stroke-width: 5;
+      stroke-dashoffset: 0;
+      stroke-dasharray: 10000;
+      stroke: $color2;
+    }
+  }
+}
